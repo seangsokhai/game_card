@@ -82,7 +82,7 @@ class Player(object):
 
     def sayHello(self):
         print("Player {} is {} ".format(count, self.name))
-        print("and have: ${}".format(self.money))
+        print("Wallets : ${}".format(self.money))
         return self
 
     # Draw n number of cards from a deck
@@ -148,7 +148,7 @@ def winner():
     print(name[0], "score:", score[0], ",", "total money:", money[0])
     print(name[1], "score:", score[1], ",", "total money:", money[1])
     print(name[2], "score:", score[2], ",", "total money:", money[2])
-    print("ME POK _________________________________________________")
+    print("----------- ME POK ------------")
     print(name[3], "score:", score[3], ",", "total money:", money[3])
 
 myDeck = Deck()
@@ -159,7 +159,7 @@ while True:
     print("==================================")
     print("====== Welcome to jak pok =======")
     print("==================================")
-    print("Rule: Allow 3 players vs ME POK\nME POK is last input\nWin +1$ and lose -1$")
+    print("Rule: Allow 3 players vs ME POK\nME POK is last input\nWin +1$ and lose -1$\n")
     count = 1
     while count <= 4:
         if count == 4:
@@ -167,7 +167,7 @@ while True:
         else:
             a = input("Player {}'s name:\n>>> ".format(count))
         try:
-            b = int(input("Money to play:\n>>> "))
+            b = int(input("My money:\n>>> $ "))
             player1 = Player(a, b)
             player1.sayHello()
             player1.draw(myDeck, 2)
@@ -193,3 +193,4 @@ while True:
         continue
     else:
         break
+
