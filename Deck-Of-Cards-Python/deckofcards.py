@@ -48,7 +48,7 @@ class Deck(object):
     # Generate 52 cards
     def build(self):
         self.cards = []
-        for suit in ['Hearts', 'Clubs', 'Diamonds', 'Spades']:
+        for suit in ['♥', '♣', '♦', '♠']:
             for val in range(1, 14):
                 self.cards.append(Card(suit, val))
 
@@ -77,8 +77,6 @@ class Player(object):
         self.money = money
         self.hand = []
         self.score = []
-        # print("hand: ",self.hand)
-        # print("name: ",self.name)
 
     def sayHello(self):
         print("Player {} is {} ".format(count, self.name))
@@ -145,11 +143,11 @@ def winner():
             money[increase] = mk
             mm = money[-1] - 1
             money[-1] = mm
-    print(name[0], "score:", score[0], ",", "total money:", money[0])
-    print(name[1], "score:", score[1], ",", "total money:", money[1])
-    print(name[2], "score:", score[2], ",", "total money:", money[2])
+    print(name[0], "score:", score[0], ",", "total money: $", money[0])
+    print(name[1], "score:", score[1], ",", "total money: $", money[1])
+    print(name[2], "score:", score[2], ",", "total money: $", money[2])
     print("----------- ME POK ------------")
-    print(name[3], "score:", score[3], ",", "total money:", money[3])
+    print(name[3], "score:", score[3], ",", "total money: $", money[3])
 
 myDeck = Deck()
 myDeck.shuffle()
@@ -159,7 +157,7 @@ while True:
     print("==================================")
     print("====== Welcome to jak pok =======")
     print("==================================")
-    print("Rule: Allow 3 players vs ME POK\nME POK is last input\nWin +1$ and lose -1$\n")
+    print("Rule: Allow 3 players vs ME POK\nME POK is last input\nPlayer's card to prepare with ME POK to know win or lose\nWin +1$ and lose -1$\n")
     count = 1
     while count <= 4:
         if count == 4:
@@ -188,9 +186,8 @@ while True:
             ValueError
     winner()
 
-    again = input("Do you want to play again?[Y/N]")
-    if again == Y or again == y:
+    again = input("\nDo you want to play again?[Y/N]")
+    if again == "Y" or again == "y":
         continue
     else:
         break
-
